@@ -1,7 +1,0 @@
-title: Crosswords
-theme: minima
-markdown: GFM
-kramdown:
-  input: GFM
-  hard_wrap: true
-
