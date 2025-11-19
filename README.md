@@ -7,7 +7,6 @@ It aims to host J's ___sonnets croisés___ under a [Creative Commons](https://cr
 
 ### Roadmap
 
-- [ ] add licence to repo (or is it license with an S?)
 - [x] create a .gitignore
   ```bash
   echo -e "*\n!.gitignore\n!README.md" >> .gitignore
@@ -19,12 +18,13 @@ It aims to host J's ___sonnets croisés___ under a [Creative Commons](https://cr
   git branch -M main
   git push origin main
   ```
-- [ ] add definitions, purpose, meaning, scope, author
+- [x] create a static crossword layout
+- [x] make the repo a [github page](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) available at [https://micheeell.github.io/crosswords/](https://micheeell.github.io/crosswords/)
+- [x] add license to repo
 - [ ] create a [CHANGELOG](https://keepachangelog.com/en/1.1.0/)
 - [ ] add tags
-- [x] create a static crossword layout
+- [ ] add definitions, purpose, meaning, scope, author
 - [ ] create a dynamic crossword page
-- [x] make the repo a [github page](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) available at [https://micheeell.github.io/crosswords/](https://micheeell.github.io/crosswords/)
 - [ ] link [other](https://www.opensourcealternative.to/project/linkfree) [projects](https://csszengarden.com/), [semver](https://semver.org/)..etc
 - [ ] generate traffic
 - [ ] find a way to make the site generate income
@@ -65,3 +65,9 @@ It aims to host J's ___sonnets croisés___ under a [Creative Commons](https://cr
 ### See also
 
 + [Sonnet *](https://www.youtube.com/watch?v=r2vGa-yLiso) [definition](https://fr.wikipedia.org/wiki/Sonnet) (* use [FreeTube](https://github.com/FreeTubeApp/FreeTube))
+
+
+## License
+
+- **Code** in this repository is licensed under the [MIT License](https://mit-license.org/)
+- **Content** (text, images, documentation) is licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
