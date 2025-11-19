@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.crossword-container {
+    display: inline-block;
+}
+
+.column-labels, .definitions .vertical .label, .definitions .horizontal .vertical.label {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-style: italic;
+}
+.definitions .horizontal .vertical.label {
+    font-weight: normal;
+}
+
+.column-labels {
+    display: grid;
+    grid-template-columns: repeat(7, 40px); /* 1 empty + 6 columns */
+    text-align: center;
+    margin-bottom: 0; /* Remove extra space */
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(8, auto); /* 8 rows */
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 40px repeat(6, 40px); /* Row label + 6 cells */
+}
+
+.definitions, .definitions .horizontal .label, .row-label {
+    font-family: 'Great Vibes', serif;
+    font-size: 24px;
+}
+
+.definitions .horizontal .label, .row-label {
+    font-weight: bold;
+}
+
+.row-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-right: 5px;
+}
+
+.black-cell {
+    background-color: #000;
+    border: 1px solid #333;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #333;
+    text-transform: uppercase;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box;
+}
