@@ -6,16 +6,24 @@ body {
 }
 
 .crossword-container {
-    display: inline-block;
+    display: flex;
+    flex-direction: column; /* Default: stacked */
+    gap: 20px; /* Space between grid and definitions */
 }
 
-.column-labels, .definitions .vertical .label, .definitions .horizontal .vertical.label {
-    font-family: 'Cinzel', serif;
+.column-labels, .definitions .vertical .label, .definitions .horizontal .vertical.inline-label {
+    font-family: Cinzel, serif;
     font-size: 24px;
     font-style: italic;
 }
-.definitions .horizontal .vertical.label {
+
+.definitions .horizontal .vertical.inline-label {
     font-weight: normal;
+}
+
+.tm {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
 }
 
 .column-labels {
@@ -37,7 +45,7 @@ body {
 
 .definitions, .definitions .horizontal .label, .row-label {
     font-family: 'Great Vibes', serif;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .definitions .horizontal .label, .row-label {
@@ -70,4 +78,67 @@ input[type="text"] {
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     box-sizing: border-box;
+}
+
+.horizontal, .vertical {
+    display: flex;
+    flex-direction: column; /* Stack lines vertically */
+    margin: 0;
+    padding: 0;
+}
+
+.horizontal span.label,
+.vertical span.label {
+    color: #707070;
+    display: inline-block;
+    width: 2em;
+    text-align: right;
+    padding-right: 6px;
+}
+
+.horizontal span.label::after,
+.vertical span.label::after {
+    content: '.';
+}
+
+span.inline-label {
+    display: inline-block;
+}
+
+span.tm {
+    font-style: italic;
+}
+
+.horizontal > span,
+.vertical > span {
+    display: flex;
+    align-items: flex-start;
+}
+
+section.horizontal, section.vertical {
+    padding-top: 10px;
+    margin-bottom: 4px;
+}
+
+hr {
+    border: none;
+    height: .1125em;
+}
+
+/* When screen width is large enough */
+@media (width >= 900px) {
+    .crossword-container {
+        flex-direction: row; /* Side by side */
+        align-items: flex-start; /* Align top edges */
+        justify-content: center; /* Optional: center horizontally */
+    }
+
+    .crossword-grid {
+        flex: 0 0 auto; /* Keep natural size */
+        margin-right: 40px; /* Space between grid and definitions */
+    }
+
+    .definitions {
+        flex: 1; /* Take remaining space */
+    }
 }

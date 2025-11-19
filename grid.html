@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="crossword-container">
+    <div class="crossword-grid">
     <div class="column-labels">
         <!-- Roman numerals for columns -->
         <span></span> <!-- Empty corner -->
@@ -102,29 +103,31 @@
             <input type="text" maxlength="1">
         </div>
     </div>
-    <div class="definitions">
-        <p class="horizontal">
-            <span class="label">1.</span> On les trouve en déos, pour lèvres, colle UHU...<br>
-            <span class="label">2.</span> Commence par la droite et reste à droite raide.<br>
-            <span class="label">3.</span> Y lit-on l'actualité des palmipèdes ?<br>
-            <span class="label">4.</span> Contrairement au <span class="vertical label">IV</span>, j'avalai goulu.<br>
-        </p>
-        <p class="horizontal">
-            <span class="label">5.</span> On y dort, on y aime, on y est langoureux...<br>
-            <span class="label">6.</span> Un sacré concurrent à Pôle-emploi qu'on prie.<br>
-            <span class="label">7.</span> Un métal alcalin qu'un enfant parfois crie.<br>
-            <span class="label">8.</span> Excite des haineux, ou bien un chaleureux.<br>
-        </p>
-        <p class="vertical">
-            <span class="label">I</span> Laissa du vide arrangé n'importe comment.<br>
-            <span class="label">II</span> Changea de position palindromiquement.<br>
-            <span class="label">III</span> Sarkozy l'a joué toute sa plaidoirie.<br>
-        </p>
-        <p class="vertical">
-            <span class="label">IV</span> Contrairement au 4, je n'avalai pas.<br>
-            <span class="label">V</span> Participa à un happening - et trippa?<br>
-            <span class="label">VI</span> Transgressive en amour, du moins en théorie.<br>
-        </p>
+    </div>
+    <div class="definitions sonnet">
+        <section class="horizontal">
+            <div class="definition"><span class="label">1</span> On les trouve en d&eacute;os, pour l&egrave;vres, colle <span class="tm">UHU</span>...</div>
+            <div class="definition"><span class="label">2</span> Commence par la droite et reste &agrave; droite raide.</div>
+            <div class="definition"><span class="label">3</span> Y lit-on l'actualit&eacute; des palmip&egrave;des&nbsp;?</div>
+            <div class="definition"><span class="label">4</span> Contrairement au <span class="vertical inline-label">IV</span>, j'avalai goulu.</div>
+        </section>
+        <section class="horizontal">
+            <div class="definition"><span class="label">5</span> On y dort, on y aime, on y est langoureux...</div>
+            <div class="definition"><span class="label">6</span> Un sacr&eacute; concurrent &agrave; P&ocirc;le-emploi qu'on prie.</div>
+            <div class="definition"><span class="label">7</span> Un m&eacute;tal alcalin qu'un enfant parfois crie.</div>
+            <div class="definition"><span class="label">8</span> Excite des haineux, ou bien un chaleureux.</div>
+        </section>
+        <hr>
+        <section class="vertical">
+            <div class="definition"><span class="label">I</span> Laissa du vide arrang&eacute; n'importe comment.</div>
+            <div class="definition"><span class="label">II</span> Changea de position palindromiquement.</div>
+            <div class="definition"><span class="label">III</span> Sarkozy l'a jou&eacute; toute sa plaidoirie.</div>
+        </section>
+        <section class="vertical">
+            <div class="definition"><span class="label">IV</span> Contrairement au <span class="horizontal inline-label">4</span>, je n'avalai pas.</div>
+            <div class="definition"><span class="label">V</span> Participa &agrave; un happening &ndash; et trippa&nbsp;?</div>
+            <div class="definition"><span class="label">VI</span> Transgressive en amour, du moins en th&eacute;orie.</div>
+        </section>
     </div>
 </div>
 </body>
