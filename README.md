@@ -69,5 +69,9 @@ It aims to host J's ___sonnets croisés___ under a [Creative Commons](https://cr
 
 ## License
 
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg "LICENSE-MIT")  
+![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg "LICENSE-CC")
+
 - **Code** in this repository is licensed under the [MIT License](https://mit-license.org/)
 - **Content** (text, images, documentation) is licensed under [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
