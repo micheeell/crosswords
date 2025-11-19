@@ -22,9 +22,9 @@ It aims to host J's ___sonnets croisés___ under a [Creative Commons](https://cr
 - [ ] add definitions, purpose, meaning, scope, author
 - [ ] create a [CHANGELOG](https://keepachangelog.com/en/1.1.0/)
 - [ ] add tags
-- [ ] create a static crossword layout
+- [x] create a static crossword layout
 - [ ] create a dynamic crossword page
-- [ ] make the repo a [github page](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+- [x] make the repo a [github page](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) available at [https://micheeell.github.io/crosswords/](https://micheeell.github.io/crosswords/)
 - [ ] link [other](https://www.opensourcealternative.to/project/linkfree) [projects](https://csszengarden.com/), [semver](https://semver.org/)..etc
 - [ ] generate traffic
 - [ ] find a way to make the site generate income
@@ -34,6 +34,32 @@ It aims to host J's ___sonnets croisés___ under a [Creative Commons](https://cr
 - [ ] die
 - [ ] resurrect
 - [ ] make the world ~~love~~ *worship* me
+
+### Standards
+
++ W3C Validators
+    + [HTML Validator](https://validator.w3.org/)
+    + [CSS Validator](https://jigsaw.w3.org/css-validator/)
++ [HTMLHint](https://htmlhint.com/)
+    + Install with
+    ```bash
+    npm install -g htmlhint
+    ```
+    + Configure it with
+    ```bash
+    echo '{ "tagname-lowercase": true, "attr-lowercase": true, "doctype-first": true, "id-unique": true, "src-not-empty": true }' > .htmlhintrc
+    ```
+    + Run it with: `htmlhint index.html`
++ [Stylelint](https://stylelint.io/)
+    + Install with:
+    ```bash
+    npm install -g stylelint stylelint-config-standard
+    ```
+    + Configure with:
+    ```bash
+    echo -e "{\n  \"extends\": \"stylelint-config-standard\"\n}" > .stylelintrc.json
+    ```
+    + Run it with: `stylelint assets/*.css`
 
 
 ### See also
