@@ -15,6 +15,7 @@
 </header>
 <main><div class="crossword-container">
     <div class="crossword-grid">
+        <h2>Grille</h2>
         <div class="column-labels">
             <!-- Roman numerals for columns -->
             <span></span> <!-- Empty corner -->
@@ -26,7 +27,7 @@
             <span>VI</span>
         </div>
         <div class="grid">
-        <!-- Row 1 -->
+            <!-- Row 1 -->
             <div class="row" id="grid-row-1">
                 <span class="row-label">1</span>
                 <input type="text" maxlength="1" id="cell-A-1">
@@ -36,17 +37,17 @@
                 <input type="text" maxlength="1" id="cell-A-5">
                 <input type="text" maxlength="1" id="cell-A-6">
            </div>
-        <!-- Row 2 -->
+            <!-- Row 2 -->
             <div class="row" id="grid-row-2">
                 <span class="row-label">2</span>
                 <input type="text" maxlength="1" id="cell-B-1">
-            <div class="black-cell"></div>
+                <div class="black-cell"></div>
                 <input type="text" maxlength="1" id="cell-B-3">
                 <input type="text" maxlength="1" id="cell-B-4">
-            <div class="black-cell"></div>
+                <div class="black-cell"></div>
                 <input type="text" maxlength="1" id="cell-B-6">
             </div>
-        <!-- Row 3 -->
+            <!-- Row 3 -->
             <div class="row" id="grid-row-3">
                 <span class="row-label">3</span>
                 <input type="text" maxlength="1" id="cell-C-1">
@@ -56,7 +57,7 @@
                 <input type="text" maxlength="1" id="cell-C-5">
                 <input type="text" maxlength="1" id="cell-C-6">
             </div>
-        <!-- Row 4 -->
+            <!-- Row 4 -->
             <div class="row" id="grid-row-4">
                 <span class="row-label">4</span>
                 <input type="text" maxlength="1" id="cell-D-1">
@@ -66,7 +67,7 @@
                 <input type="text" maxlength="1" id="cell-D-5">
                 <input type="text" maxlength="1" id="cell-D-6">
             </div>
-        <!-- Row 5 -->
+            <!-- Row 5 -->
             <div class="row" id="grid-row-5">
                 <span class="row-label">5</span>
                 <input type="text" maxlength="1" id="cell-E-1">
@@ -76,7 +77,7 @@
                 <input type="text" maxlength="1" id="cell-E-5">
                 <input type="text" maxlength="1" id="cell-E-6">
             </div>
-        <!-- Row 6 -->
+            <!-- Row 6 -->
             <div class="row" id="grid-row-6">
                 <span class="row-label">6</span>
                 <input type="text" maxlength="1" id="cell-F-1">
@@ -86,17 +87,17 @@
                 <input type="text" maxlength="1" id="cell-F-5">
                 <input type="text" maxlength="1" id="cell-F-6">
             </div>
-        <!-- Row 7 -->
+            <!-- Row 7 -->
             <div class="row" id="grid-row-7">
                 <span class="row-label">7</span>
                 <input type="text" maxlength="1" id="cell-G-1">
-            <div class="black-cell"></div>
+                <div class="black-cell"></div>
                 <input type="text" maxlength="1" id="cell-G-3">
                 <input type="text" maxlength="1" id="cell-G-4">
-            <div class="black-cell"></div>
+                <div class="black-cell"></div>
                 <input type="text" maxlength="1" id="cell-G-6">
             </div>
-        <!-- Row 8 -->
+            <!-- Row 8 -->
             <div class="row"  id="grid-row-8">
                 <span class="row-label">8</span>
                 <input type="text" maxlength="1" id="cell-H-1">
@@ -109,38 +110,76 @@
         </div>
     </div>
     <div class="definitions sonnet">
+        <h2>D&eacute;finitions</h2>
+        <div class="spacer"></div>
+        <h3>Horizontal</h3>
         <section class="horizontal">
-            <div class="definition" id="def-row-A"><span class="label">1</span> On les trouve en d&eacute;os, pour l&egrave;vres, colle
-                <span class="tm">UHU</span>&hellip;
+            <h4>Premier quatrain</h4>
+            <div class="definition" id="def-row-A">
+                <span class="label">1</span>
+                On les trouve en d&eacute;os, pour l&egrave;vres, colle <span class="tm">UHU</span>&hellip;
             </div>
-            <div class="definition" id="def-row-B"><span class="label">2</span> Commence par la droite et reste &agrave; droite raide.
+            <div class="definition" id="def-row-B">
+                <span class="label">2</span>
+                Commence par la droite et reste &agrave; droite raide.
             </div>
-            <div class="definition" id="def-row-C"><span class="label">3</span> Y lit-on l'actualit&eacute; des palmip&egrave;des&nbsp;?
+            <div class="definition" id="def-row-C">
+                <span class="label">3</span>
+                Y lit-on l'actualit&eacute; des palmip&egrave;des&nbsp;?
             </div>
-            <div class="definition" id="def-row-D"><span class="label">4</span> Contrairement au <span class="vertical inline-label">IV</span>, j'avalai goulu.
+            <div class="definition" id="def-row-D">
+                <span class="label">4</span>
+                Contrairement au <span class="vertical inline-label">IV</span>, j'avalai goulu.
             </div>
         </section>
         <section class="horizontal">
-            <div class="definition" id="def-row-E"><span class="label">5</span> On y dort, on y aime, on y est langoureux&hellip;</div>
-            <div class="definition" id="def-row-F"><span class="label">6</span> Un sacr&eacute; concurrent &agrave; P&ocirc;le-emploi
-                qu'on prie.
+            <h4>Deuxième quatrain</h4>
+            <div class="definition" id="def-row-E">
+                <span class="label">5</span>
+                On y dort, on y aime, on y est langoureux&hellip;</div>
+            <div class="definition" id="def-row-F">
+                <span class="label">6</span>
+                Un sacr&eacute; concurrent &agrave; P&ocirc;le-emploi qu'on prie.
             </div>
-            <div class="definition" id="def-row-G"><span class="label">7</span> Un m&eacute;tal alcalin qu'un enfant parfois crie.
+            <div class="definition" id="def-row-G">
+                <span class="label">7</span>
+                Un m&eacute;tal alcalin qu'un enfant parfois crie.
             </div>
-            <div class="definition" id="def-row-H"><span class="label">8</span> Excite des haineux, ou bien un chaleureux.</div>
+            <div class="definition" id="def-row-H">
+                <span class="label">8</span>
+                Excite des haineux, ou bien un chaleureux.
+            </div>
         </section>
         <hr>
+        <h3>Vertical</h3>
         <section class="vertical">
-            <div class="definition" id="def-col-1"><span class="label">I</span> Laissa du vide arrang&eacute; n'importe comment.</div>
-            <div class="definition" id="def-col-2"><span class="label">II</span> Changea de position palindromiquement.</div>
-            <div class="definition" id="def-col-3"><span class="label">III</span> Sarkozy l'a jou&eacute; toute sa plaidoirie.</div>
+            <h4>Premier tercet</h4>
+            <div class="definition" id="def-col-1">
+                <span class="label">I</span>
+                Laissa du vide arrang&eacute; n'importe comment.
+            </div>
+            <div class="definition" id="def-col-2">
+                <span class="label">II</span>
+                Changea de position palindromiquement.
+            </div>
+            <div class="definition" id="def-col-3">
+                <span class="label">III</span>
+                Sarkozy l'a jou&eacute; toute sa plaidoirie.
+            </div>
         </section>
         <section class="vertical">
-            <div class="definition" id="def-col-4"><span class="label">IV</span> Contrairement au <span class="horizontal inline-label">4</span>, je n'avalai pas.
+            <h4>Deuxième tercet</h4>
+            <div class="definition" id="def-col-4">
+                <span class="label">IV</span>
+                Contrairement au <span class="horizontal inline-label">4</span>, je n'avalai pas.
             </div>
-            <div class="definition" id="def-col-5"><span class="label">V</span> Participa &agrave; un happening &ndash; et trippa&nbsp;?
+            <div class="definition" id="def-col-5">
+                <span class="label">V</span>
+                Participa &agrave; un happening &ndash; et trippa&nbsp;?
             </div>
-            <div class="definition" id="def-col-6"><span class="label">VI</span> Transgressive en amour, du moins en th&eacute;orie.
+            <div class="definition" id="def-col-6">
+                <span class="label">VI</span>
+                Transgressive en amour, du moins en th&eacute;orie.
             </div>
         </section>
     </div>
@@ -148,36 +187,30 @@
 <footer>
     <ul>
         <li>
-            <button id="print-btn" aria-label="Imprimer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 9V2h12v7h2a2 2 0 012 2v6h-4v5H6v-5H2v-6a2 2 0 012-2h2zm2-5v5h8V4H8zm8 14v-3H8v3h8z"/>
+            <button id="print-btn" aria-label="Imprimer" title="Imprimer" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 30 30">
+                    <g transform="scale(0.046875)">
+                        <path d="M128 128C128 92.7 156.7 64 192 64L405.5 64C422.5 64 438.8 70.7 450.8 82.7L493.3 125.2C505.3 137.2 512 153.5 512 170.5L512 208L128 208L128 128zM64 320C64 284.7 92.7 256 128 256L512 256C547.3 256 576 284.7 576 320L576 416C576 433.7 561.7 448 544 448L512 448L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 448L96 448C78.3 448 64 433.7 64 416L64 320zM192 480L192 512L448 512L448 416L192 416L192 480zM520 336C520 322.7 509.3 312 496 312C482.7 312 472 322.7 472 336C472 349.3 482.7 360 496 360C509.3 360 520 349.3 520 336z"/>
+                    </g>
                 </svg>
             </button>
         </li>
         <li>
-            <a href="assets/sonnet-8.pdf" download="sonnet-croisé.pdf">
-                <button id="download-btn" aria-label="Télécharger">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 482.14 482.14" fill="currentColor">
-                        <g>
-                            <path d="M302.598,0H108.967C80.661,0,57.652,23.025,57.652,51.315v379.509c0,28.289,23.009,51.315,51.315,51.315h264.205
-      c28.274,0,51.315-23.026,51.315-51.315V121.449L302.598,0z M373.172,450.698H108.967c-10.97,0-19.891-8.905-19.891-19.874V51.315
-      c0-10.953,8.921-19.858,19.891-19.858l181.874-0.189v67.218c0,19.653,15.949,35.603,35.587,35.603l65.878-0.189l0.725,296.925
-      C393.031,441.793,384.142,450.698,373.172,450.698z"/>
-                            <path d="M297.413,246.059h-24.634v-73.058c0-7.414-6.004-13.42-13.411-13.42h-36.626c-7.392,0-13.396,6.006-13.396,13.42v73.058
-      H184.71c-4.065,0-7.723,2.458-9.299,6.225c-1.559,3.75-0.709,8.085,2.191,10.978l56.327,56.335c3.94,3.94,10.323,3.94,14.247,0
-      l56.359-56.335c2.884-2.893,3.736-7.228,2.191-10.978C305.152,248.517,301.48,246.059,297.413,246.059z"/>
-                        </g>
-                    </svg>
-                </button>
+            <a href="assets/sonnet-8.pdf" download="sonnet-croisé.pdf" class="btn" id="download-btn" aria-label="Télécharger" title="Télécharger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 30 30">
+                    <g transform="scale(0.046875)">
+                        <path d="M128 128C128 92.7 156.7 64 192 64L341.5 64C358.5 64 374.8 70.7 386.8 82.7L493.3 189.3C505.3 201.3 512 217.6 512 234.6L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 128zM336 122.5L336 216C336 229.3 346.7 240 360 240L453.5 240L336 122.5zM303 505C312.4 514.4 327.6 514.4 336.9 505L400.9 441C410.3 431.6 410.3 416.4 400.9 407.1C391.5 397.8 376.3 397.7 367 407.1L344 430.1L344 344C344 330.7 333.3 320 320 320C306.7 320 296 330.7 296 344L296 430.1L273 407.1C263.6 397.7 248.4 397.7 239.1 407.1C229.8 416.5 229.7 431.7 239.1 441L303.1 505z"/>
+                    </g>
+                </svg>
             </a>
         </li>
         <li>
-            <a href="./sonnet-7.html">
-                <button id="previous-btn" aria-label="Précédent">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M16 4l-8 8 8 8V4z"/>
-                    </svg>
-                </button>
+            <a href="./sonnet-7.html" class="btn" id="previous-btn" aria-label="Précédent" title="Précédent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 30 30">
+                    <g transform="scale(0.046875)">
+                        <path d="M236.3 107.1C247.9 96 265 92.9 279.7 99.2C294.4 105.5 304 120 304 136L304 272.3L476.3 107.2C487.9 96 505 92.9 519.7 99.2C534.4 105.5 544 120 544 136L544 504C544 520 534.4 534.5 519.7 540.8C505 547.1 487.9 544 476.3 532.9L304 367.7L304 504C304 520 294.4 534.5 279.7 540.8C265 547.1 247.9 544 236.3 532.9L44.3 348.9C36.5 341.3 32 330.9 32 320C32 309.1 36.5 298.7 44.3 291.1L236.3 107.1z"/>
+                    </g>
+                </svg>
             </a>
         </li>
         <li>

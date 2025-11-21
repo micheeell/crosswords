@@ -15,6 +15,7 @@
 </header>
 <main><div class="crossword-container">
     <div class="crossword-grid">
+        <h2>Grille</h2>
         <div class="column-labels">
             <!-- Roman numerals for columns -->
             <span></span> <!-- Empty corner -->
@@ -109,7 +110,11 @@
         </div>
     </div>
     <div class="definitions sonnet">
+        <h2>D&eacute;finitions</h2>
+        <div class="spacer"></div>
+        <h3>Horizontal</h3>
         <section class="horizontal">
+            <h4>Premier quatrain</h4>
             <div class="definition" id="def-row-A">
                 <span class="label">1</span>
                 Vis tout soudain quelque chose dans le décor.
@@ -128,6 +133,7 @@
             </div>
         </section>
         <section class="horizontal">
+            <h4>Deuxième quatrain</h4>
             <div class="definition" id="def-row-E">
                 <span class="label">5</span>
                 On peut en tisser et des cordes et des nattes.
@@ -146,7 +152,9 @@
             </div>
         </section>
         <hr>
+        <h3>Vertical</h3>
         <section class="vertical">
+            <h4>Premier tercet</h4>
             <div class="definition" id="def-col-1">
                 <span class="label">I</span>
                 Il a bien fallu que d'un membre on les déprît.
@@ -161,6 +169,7 @@
             </div>
         </section>
         <section class="vertical">
+            <h4>Deuxième tercet</h4>
             <div class="definition" id="def-col-4">
                 <span class="label">IV</span>
                 Elle est source d'Argens dans le Var qui l'hydrate.
@@ -179,45 +188,39 @@
 <footer>
     <ul>
         <li>
-            <button id="print-btn" aria-label="Imprimer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 9V2h12v7h2a2 2 0 012 2v6h-4v5H6v-5H2v-6a2 2 0 012-2h2zm2-5v5h8V4H8zm8 14v-3H8v3h8z"/>
+            <button class="btn" id="print-btn" aria-label="Imprimer" title="Imprimer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 30 30">
+                    <g transform="scale(0.046875)">
+                        <path d="M128 128C128 92.7 156.7 64 192 64L405.5 64C422.5 64 438.8 70.7 450.8 82.7L493.3 125.2C505.3 137.2 512 153.5 512 170.5L512 208L128 208L128 128zM64 320C64 284.7 92.7 256 128 256L512 256C547.3 256 576 284.7 576 320L576 416C576 433.7 561.7 448 544 448L512 448L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 448L96 448C78.3 448 64 433.7 64 416L64 320zM192 480L192 512L448 512L448 416L192 416L192 480zM520 336C520 322.7 509.3 312 496 312C482.7 312 472 322.7 472 336C472 349.3 482.7 360 496 360C509.3 360 520 349.3 520 336z"/>
+                    </g>
                 </svg>
             </button>
         </li>
         <li>
-            <a href="assets/sonnet-4.pdf" download="sonnet-croisé.pdf">
-                <button id="download-btn" aria-label="Télécharger">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 482.14 482.14" fill="currentColor">
-                        <g>
-                            <path d="M302.598,0H108.967C80.661,0,57.652,23.025,57.652,51.315v379.509c0,28.289,23.009,51.315,51.315,51.315h264.205
-      c28.274,0,51.315-23.026,51.315-51.315V121.449L302.598,0z M373.172,450.698H108.967c-10.97,0-19.891-8.905-19.891-19.874V51.315
-      c0-10.953,8.921-19.858,19.891-19.858l181.874-0.189v67.218c0,19.653,15.949,35.603,35.587,35.603l65.878-0.189l0.725,296.925
-      C393.031,441.793,384.142,450.698,373.172,450.698z"/>
-                            <path d="M297.413,246.059h-24.634v-73.058c0-7.414-6.004-13.42-13.411-13.42h-36.626c-7.392,0-13.396,6.006-13.396,13.42v73.058
-      H184.71c-4.065,0-7.723,2.458-9.299,6.225c-1.559,3.75-0.709,8.085,2.191,10.978l56.327,56.335c3.94,3.94,10.323,3.94,14.247,0
-      l56.359-56.335c2.884-2.893,3.736-7.228,2.191-10.978C305.152,248.517,301.48,246.059,297.413,246.059z"/>
-                        </g>
-                    </svg>
-                </button>
+            <a class="btn" id="download-btn" href="assets/sonnet-4.pdf" download="sonnet-croisé.pdf" aria-label="Télécharger" title="Télécharger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 30 30">
+                    <g transform="scale(0.046875)">
+                        <path d="M128 128C128 92.7 156.7 64 192 64L341.5 64C358.5 64 374.8 70.7 386.8 82.7L493.3 189.3C505.3 201.3 512 217.6 512 234.6L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 128zM336 122.5L336 216C336 229.3 346.7 240 360 240L453.5 240L336 122.5zM303 505C312.4 514.4 327.6 514.4 336.9 505L400.9 441C410.3 431.6 410.3 416.4 400.9 407.1C391.5 397.8 376.3 397.7 367 407.1L344 430.1L344 344C344 330.7 333.3 320 320 320C306.7 320 296 330.7 296 344L296 430.1L273 407.1C263.6 397.7 248.4 397.7 239.1 407.1C229.8 416.5 229.7 431.7 239.1 441L303.1 505z"/>
+                    </g>
+                </svg>
             </a>
         </li>
         <li>
-            <a href="./sonnet-3.html">
-                <button id="previous-btn" aria-label="Précédent">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M16 4l-8 8 8 8V4z"/>
-                    </svg>
-                </button>
+            <a class="btn" id="previous-btn" href="./sonnet-3.html" aria-label="Précédent" title="Précédent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 30 30">
+                    <g transform="scale(0.046875)">
+                        <path d="M236.3 107.1C247.9 96 265 92.9 279.7 99.2C294.4 105.5 304 120 304 136L304 272.3L476.3 107.2C487.9 96 505 92.9 519.7 99.2C534.4 105.5 544 120 544 136L544 504C544 520 534.4 534.5 519.7 540.8C505 547.1 487.9 544 476.3 532.9L304 367.7L304 504C304 520 294.4 534.5 279.7 540.8C265 547.1 247.9 544 236.3 532.9L44.3 348.9C36.5 341.3 32 330.9 32 320C32 309.1 36.5 298.7 44.3 291.1L236.3 107.1z"/>
+                    </g>
+                </svg>
             </a>
         </li>
         <li>
-            <a href="./sonnet-5.html">
-                <button id="next-btn" aria-label="Suivant">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 4l8 8-8 8V4z"/>
-                    </svg>
-                </button>
+            <a class="btn" id="next-btn" href="./sonnet-5.html" aria-label="Suivant" title="Suivant">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 30 30">
+                    <g transform="scale(0.046875)">
+                        <path d="M403.7 107.1C392.1 96 375 92.9 360.3 99.2C345.6 105.5 336 120 336 136L336 272.3L163.7 107.2C152.1 96 135 92.9 120.3 99.2C105.6 105.5 96 120 96 136L96 504C96 520 105.6 534.5 120.3 540.8C135 547.1 152.1 544 163.7 532.9L336 367.7L336 504C336 520 345.6 534.5 360.3 540.8C375 547.1 392.1 544 403.7 532.9L595.7 348.9C603.6 341.4 608 330.9 608 320C608 309.1 603.5 298.7 595.7 291.1L403.7 107.1z"/>
+                    </g>
+                </svg>
             </a>
         </li>
         <li>
