@@ -198,7 +198,6 @@ button.btn {
     background-color: #d0d0d7;
 }
 
-
 /* Wide screen */
 @media (width >= 900px) {
     .crossword-container {
@@ -216,6 +215,22 @@ button.btn {
         flex: 1;
     }
 }
+
+/* Mobile */
+@media (width < 394px) {
+    footer {
+        padding: 10px 4px;
+    }
+
+    footer ul {
+        gap: 3px;
+    }
+
+    footer ul li:not(:last-child)::after {
+        margin-left: 3px;
+    }
+}
+
 
 @media print {
     .definitions {
