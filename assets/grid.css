@@ -198,6 +198,114 @@ button.btn {
     background-color: #d0d0d7;
 }
 
+body[data-theme="orange"] {
+    color: #985511;
+}
+
+body[data-theme="orange"] .horizontal span.label,
+body[data-theme="orange"] .vertical span.label {
+    color: #e67e22;
+}
+
+body[data-theme="orange"] .btn, body[data-theme="orange"] a {
+    color: #a55c21;
+}
+
+body[data-theme="orange"] .btn {
+    background-color: #ffe5cc;
+    border: 1px solid #ff8c42;
+}
+
+body[data-theme="orange"] .black-cell {
+    background-color: #4a2c00;
+    border: 1px solid #985511;
+}
+
+body[data-theme="orange"] input[type="text"] {
+    border: 1px solid #985511;
+}
+
+body[data-theme="dark"] {
+    background-color: #333;
+    color: #fff;
+}
+
+body[data-theme="dark"] .horizontal span.label,
+body[data-theme="dark"] .vertical span.label {
+    color: #ededed;
+}
+
+body[data-theme="dark"] .btn, body[data-theme="dark"] a {
+    color: #e1e1e1;
+}
+
+body[data-theme="dark"] .btn {
+    background-color: #333;
+    border: 1px solid #ededed;
+}
+
+body[data-theme="dark"] .black-cell {
+    background-color: #454545;
+    border: 1px solid #333;
+}
+
+body[data-theme="dark"] input[type="text"] {
+    border: 1px solid #ddd;
+}
+
+/* ===== Green theme ===== */
+body[data-theme="green"] {
+    color: #1C4E2A;
+}
+
+body[data-theme="green"] .horizontal span.label,
+body[data-theme="green"] .vertical span.label {
+    color: #00C853;
+}
+
+body[data-theme="green"] .btn,
+body[data-theme="green"] a {
+    color: #2E7D32;
+}
+
+body[data-theme="green"] .btn {
+    background-color: #EAF6EA;
+    border: 1px solid #43A047;
+}
+
+body[data-theme="green"] .black-cell {
+    background-color: #10351D;
+    border: 1px solid #1C4E2A;
+}
+
+body[data-theme="green"] input[type="text"] {
+    border: 1px solid #1C4E2A;
+}
+
+#theme-switcher.green:hover {
+    background-color: #e7f7ec;
+    color: #2a7a3d;
+    border-color: #27ae60;
+}
+
+#theme-switcher.orange:hover {
+    background-color: #ffe5cc;
+    color: #e67e22;
+    border-color: #a55c21;
+}
+
+#theme-switcher.light:hover {
+    background-color: #ededed;
+    color: #191919;
+    border-color: #333;
+}
+
+#theme-switcher.dark:hover {
+    background-color: #191919;
+    color: #dedede;
+    border-color: #ededed;
+}
+
 /* Wide screen */
 @media (width >= 900px) {
     .crossword-container {
@@ -230,7 +338,6 @@ button.btn {
         margin-left: 3px;
     }
 }
-
 
 @media print {
     .definitions {
