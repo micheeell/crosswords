@@ -21,6 +21,75 @@ h1 {
     font-style: italic;
 }
 
+div.clearfix {
+    clear: both;
+}
+
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    float: right;
+    position: relative;
+    gap: 10px;
+    padding-right: 4px;
+    margin-right: 18px;
+    cursor: pointer;
+}
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    color: #555;
+    transition: color 200ms ease, fill 200ms ease, stroke 200ms ease;
+}
+
+.icon.sun path {
+    fill: none;
+}
+
+body[data-mode="dark"] .icon.sun path {
+    fill: currentColor;
+}
+
+body[data-mode="dark"] .icon.sun path {
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-opacity: 0.95;
+}
+
+body[data-mode="dark"] .icon.moon path {
+    fill: currentColor;
+}
+
+.icon.moon path {
+    fill: none;
+}
+
+.switch-bar {
+    position: relative;
+    width: 2rem;
+    height: 1.5rem;
+    background: #e0e0e0;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.25rem;
+}
+
+.switch-dot {
+    width: 1rem;
+    height: 1rem;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 0.25rem;
+    transition: left 0.3s ease;
+}
+
+body[data-mode="dark"] .switch-dot {
+    left: calc(100% - 1.25rem); /* Moves dot to right */
+}
+
 h2, h3, h4, div.spacer {
     display: none;
 }
@@ -198,6 +267,40 @@ button.btn {
     background-color: #d0d0d7;
 }
 
+/* === Dark mode === */
+body[data-mode="dark"] {
+    background-color: #333;
+    color: #fff;
+}
+
+body[data-mode="dark"] .icon {
+    color: #ddd;
+}
+
+body[data-mode="dark"] .horizontal span.label,
+body[data-mode="dark"] .vertical span.label {
+    color: #ededed;
+}
+
+body[data-mode="dark"] .btn, body[data-mode="dark"] a {
+    color: #e1e1e1;
+}
+
+body[data-mode="dark"] .btn {
+    background-color: #333;
+    border: 1px solid #ededed;
+}
+
+body[data-mode="dark"] .black-cell {
+    background-color: #454545;
+    border: 1px solid #333;
+}
+
+body[data-mode="dark"] input[type="text"] {
+    border: 1px solid #ddd;
+}
+
+/* === Orange theme === */
 body[data-theme="orange"] {
     color: #985511;
 }
@@ -225,82 +328,358 @@ body[data-theme="orange"] input[type="text"] {
     border: 1px solid #985511;
 }
 
-body[data-theme="dark"] {
-    background-color: #333;
-    color: #fff;
+body[data-theme="orange"] .switch-bar {
+    background: #ffe5cc;
 }
 
-body[data-theme="dark"] .horizontal span.label,
-body[data-theme="dark"] .vertical span.label {
-    color: #ededed;
+body[data-theme="orange"] .switch-dot {
+    background: #e67e22;
 }
 
-body[data-theme="dark"] .btn, body[data-theme="dark"] a {
-    color: #e1e1e1;
-}
-
-body[data-theme="dark"] .btn {
-    background-color: #333;
-    border: 1px solid #ededed;
-}
-
-body[data-theme="dark"] .black-cell {
-    background-color: #454545;
-    border: 1px solid #333;
-}
-
-body[data-theme="dark"] input[type="text"] {
-    border: 1px solid #ddd;
-}
-
-/* ===== Green theme ===== */
-body[data-theme="green"] {
-    color: #1C4E2A;
-}
-
-body[data-theme="green"] .horizontal span.label,
-body[data-theme="green"] .vertical span.label {
-    color: #00C853;
-}
-
-body[data-theme="green"] .btn,
-body[data-theme="green"] a {
-    color: #2E7D32;
-}
-
-body[data-theme="green"] .btn {
-    background-color: #EAF6EA;
-    border: 1px solid #43A047;
-}
-
-body[data-theme="green"] .black-cell {
-    background-color: #10351D;
-    border: 1px solid #1C4E2A;
-}
-
-body[data-theme="green"] input[type="text"] {
-    border: 1px solid #1C4E2A;
-}
-
-#theme-switcher.green:hover {
-    background-color: #e7f7ec;
-    color: #2a7a3d;
-    border-color: #27ae60;
-}
-
-#theme-switcher.orange:hover {
-    background-color: #ffe5cc;
+#theme-switcher.orange:hover, body[data-theme="orange"] .icon {
     color: #e67e22;
     border-color: #a55c21;
 }
 
-#theme-switcher.light:hover {
-    background-color: #ededed;
-    color: #191919;
-    border-color: #333;
+#theme-switcher.orange:hover {
+    background-color: #ffe5cc;
 }
 
-#theme-switcher.dark:hover {
+/* === Dark Orange Mode === */
+body[data-theme="orange"][data-mode="dark"] {
+    color: #ffb366;
+}
+
+body[data-theme="orange"][data-mode="dark"] .horizontal span.label,
+body[data-theme="orange"][data-mode="dark"] .vertical span.label {
+    color: #ffa64d;
+}
+
+body[data-theme="orange"][data-mode="dark"] .btn,
+body[data-theme="orange"][data-mode="dark"] a {
+    color: #ff8c42;
+}
+
+body[data-theme="orange"][data-mode="dark"] .btn {
+    background-color: #2b2b2b;
+    border: 1px solid #ff8c42;
+}
+
+body[data-theme="orange"][data-mode="dark"] .black-cell {
+    background-color: #f84;
+    border: 1px solid #ff8c42;
+}
+
+body[data-theme="orange"][data-mode="dark"] input[type="text"] {
+    border: 1px solid #ff8c42;
+    background-color: #333;
+    color: #fff;
+}
+
+body[data-mode="dark"] .switch-bar,
+body[data-theme="red"][data-mode="dark"] .switch-bar,
+body[data-theme="green"][data-mode="dark"] .switch-bar,
+body[data-theme="blue"][data-mode="dark"] .switch-bar,
+body[data-theme="orange"][data-mode="dark"] .switch-bar {
+    background: #a0a0a0;
+}
+
+body[data-theme="orange"][data-mode="dark"] .switch-dot {
+    background: #ff8c42;
+}
+
+body[data-mode="dark"] #theme-switcher.orange:hover,
+body[data-theme="orange"][data-mode="dark"] .icon {
+    color: #ff8c42;
+    border-color: #ff8c42;
+}
+
+body[data-mode="dark"] #theme-switcher.orange:hover {
+    background-color: #2b2b2b;
+}
+
+/* === Green theme === */
+body[data-theme="green"] {
+    color: #1c4e2a;
+}
+
+body[data-theme="green"] .horizontal span.label,
+body[data-theme="green"] .vertical span.label {
+    color: #00c853;
+}
+
+body[data-theme="green"] .btn,
+body[data-theme="green"] a {
+    color: #2e7D32;
+}
+
+body[data-theme="green"] .btn {
+    background-color: #eaf6ea;
+    border: 1px solid #43a047;
+}
+
+body[data-theme="green"] .black-cell {
+    background-color: #10351D;
+    border: 1px solid #1c4e2A;
+}
+
+body[data-theme="green"] input[type="text"] {
+    border: 1px solid #1c4e2a;
+}
+
+body[data-theme="green"] .switch-bar {
+    background: #eaf6ea;
+}
+
+body[data-theme="green"] .switch-dot {
+    background: #2e7D32;
+}
+
+#theme-switcher.green:hover, body[data-theme="green"] .icon {
+    color: #2a7a3d;
+    border-color: #27ae60;
+}
+
+#theme-switcher.green:hover {
+    background-color: #e7f7ec;
+}
+
+/* === Dark Green Theme === */
+body[data-theme="green"][data-mode="dark"] {
+    color: #a8e6a1;
+}
+
+body[data-theme="green"][data-mode="dark"] .horizontal span.label,
+body[data-theme="green"][data-mode="dark"] .vertical span.label {
+    color: #66bb6a;
+}
+
+body[data-theme="green"][data-mode="dark"] .btn,
+body[data-theme="green"][data-mode="dark"] a {
+    color: #81c784;
+}
+
+body[data-theme="green"][data-mode="dark"] .btn {
+    background-color: #1e1e1e;
+    border: 1px solid #43a047;
+}
+
+body[data-theme="green"][data-mode="dark"] .black-cell {
+    background-color: #4a4;
+    border: 1px solid #43a047;
+}
+
+body[data-theme="green"][data-mode="dark"] input[type="text"] {
+    border: 1px solid #43a047;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body[data-theme="green"][data-mode="dark"] .switch-dot {
+    background: #66bb6a;
+}
+
+body[data-mode="dark"] #theme-switcher.green:hover,
+body[data-theme="green"][data-mode="dark"] .icon {
+    color: #81c784;
+    border-color: #66bb6a;
+}
+
+body[data-mode="dark"] #theme-switcher.green:hover {
+    background-color: #1e1e1e;
+}
+
+/* === Blue theme === */
+body[data-theme="blue"] {
+    color: #173a5e;
+}
+
+body[data-theme="blue"] .horizontal span.label,
+body[data-theme="blue"] .vertical span.label {
+    color: #1976d2;
+}
+
+body[data-theme="blue"] .btn,
+body[data-theme="blue"] a {
+    color: #1565c0;
+}
+
+body[data-theme="blue"] .btn,
+#theme-switcher.blue:hover  {
+    background-color: #e7f0fa;
+    border: 1px solid #1976d2;
+}
+
+body[data-theme="blue"] .black-cell {
+    background-color: #0d2438;
+    border: 1px solid #173A5e;
+}
+
+body[data-theme="blue"] input[type="text"] {
+    border: 1px solid #173A5e;
+}
+
+body[data-theme="blue"] .switch-bar {
+    background: #e7f0fa;
+}
+
+body[data-theme="blue"] .switch-dot {
+    background: #1565c0;
+}
+
+#theme-switcher.blue:hover, body[data-theme="blue"] .icon {
+    color: #1565c0;
+}
+
+#theme-switcher.blue:hover {
+    background-color: #e7f0fa;
+    border: 1px solid #1976d2;
+}
+
+/* === Dark Blue Theme === */
+body[data-theme="blue"][data-mode="dark"] {
+    color: #b3cde6;
+}
+
+body[data-theme="blue"][data-mode="dark"] .horizontal span.label,
+body[data-theme="blue"][data-mode="dark"] .vertical span.label {
+    color: #64b5f6;
+}
+
+body[data-theme="blue"][data-mode="dark"] .btn,
+body[data-theme="blue"][data-mode="dark"] a {
+    color: #42a5f5;
+}
+
+body[data-theme="blue"][data-mode="dark"] .btn {
+    background-color: #1e1e1e;
+    border: 1px solid #1976d2;
+}
+
+body[data-theme="blue"][data-mode="dark"] .black-cell {
+    background-color: #17d;
+    border: 1px solid #1976d2;
+}
+
+body[data-theme="blue"][data-mode="dark"] input[type="text"] {
+    border: 1px solid #1976d2;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body[data-theme="blue"][data-mode="dark"] .switch-dot {
+    background: #42a5f5;
+}
+
+body[data-mode="dark"] #theme-switcher.blue:hover,
+body[data-theme="blue"][data-mode="dark"] .icon {
+    color: #64b5f6;
+    border-color: #1976d2;
+}
+
+body[data-mode="dark"] #theme-switcher.blue:hover {
+    background-color: #1e1e1e;
+}
+
+/* === Red theme === */
+body[data-theme="red"] {
+    color: #7A1C1C;
+}
+
+body[data-theme="red"] .horizontal span.label,
+body[data-theme="red"] .vertical span.label {
+    color: #E53935;
+}
+
+body[data-theme="red"] .btn,
+body[data-theme="red"] a {
+    color: #c62828;
+}
+
+body[data-theme="red"] .btn {
+    background-color: #fdeaea;
+    border: 1px solid #d32f2f;
+}
+
+body[data-theme="red"] .black-cell {
+    background-color: #3b0f0f;
+    border: 1px solid #7a1c1c;
+}
+
+body[data-theme="red"] input[type="text"] {
+    border: 1px solid #7a1c1c;
+}
+
+body[data-theme="red"] .switch-bar {
+    background: #fdeaea;
+}
+
+body[data-theme="red"] .switch-dot {
+    background: #b71c1c;
+}
+
+#theme-switcher.red:hover, body[data-theme="red"] .icon {
+    color: #b71c1c;
+    border-color: #d32f2f;
+}
+
+#theme-switcher.red:hover {
+    background-color: #fbecec;
+}
+
+/* === Dark Red Theme === */
+body[data-theme="red"][data-mode="dark"] {
+    color: #ffb3b3;
+}
+
+body[data-theme="red"][data-mode="dark"] .horizontal span.label,
+body[data-theme="red"][data-mode="dark"] .vertical span.label {
+    color: #ff6f61;
+}
+
+body[data-theme="red"][data-mode="dark"] .btn,
+body[data-theme="red"][data-mode="dark"] a {
+    color: #ff4d4d;
+}
+
+body[data-theme="red"][data-mode="dark"] .btn {
+    background-color: #1e1e1e;
+    border: 1px solid #d32f2f;
+}
+
+body[data-theme="red"][data-mode="dark"] .black-cell {
+    background-color: #d22;
+    border: 1px solid #d32f2f;
+}
+
+body[data-theme="red"][data-mode="dark"] input[type="text"] {
+    border: 1px solid #d32f2f;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body[data-theme="red"][data-mode="dark"] .switch-dot {
+    background: #ff4d4d;
+}
+
+body[data-mode="dark"] #theme-switcher.red:hover,
+body[data-theme="red"][data-mode="dark"] .icon {
+    color: #ff6f61;
+    border-color: #d32f2f;
+}
+
+body[data-mode="dark"] #theme-switcher.red:hover {
+    background-color: #1e1e1e;
+}
+
+
+#theme-switcher.light:hover {
+    background-color: #ededed;
+    color: #8c8c0c;
+    border-color: #999989;
+}
+
+body[data-mode="dark"] #theme-switcher.light:hover {
     background-color: #191919;
     color: #dedede;
     border-color: #ededed;
