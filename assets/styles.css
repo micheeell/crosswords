@@ -36,74 +36,87 @@ a:hover {
     cursor: pointer;
 }
 
-#theme-switcher.light:hover {
-    background-color: #ededed;
-    color: #191919;
-    border-color: #333;
+div.clearfix {
+    clear: both;
 }
 
-/* ===== Dark theme ===== */
-body[data-theme="dark"] {
+div.spacer {
+    min-height: 12px;
+}
+
+/* Toggle button */
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    float: left;
+    position: relative;
+    gap: 10px;
+    padding-right: 4px;
+    margin-right: 18px;
+    cursor: pointer;
+}
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    color: #555;
+    transition: color 200ms ease, fill 200ms ease, stroke 200ms ease;
+}
+
+.icon.sun path {
+    fill: none;
+}
+
+.icon.moon path {
+    fill: none;
+}
+
+.switch-bar {
+    position: relative;
+    width: 1.5rem;
+    height: 1.25rem;
+    background: #e0e0e0;
+    border-radius: .75rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.25rem;
+}
+
+.switch-dot {
+    width: .75rem;
+    height: .75rem;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    left: 0.25rem;
+    transition: left 0.3s ease;
+}
+
+/* Dark mode */
+body[data-mode="dark"] {
     background-color: #333;
     color: #fff;
 }
 
-body[data-theme="dark"] h1 {
+body[data-mode="dark"] h1 {
     color: #bdc3c7;
 }
 
-body[data-theme="dark"] .btn, body[data-theme="dark"] a {
-    color: #e1e1e1;
+body[data-mode="dark"] .icon {
+    color: #cbcbcb;
 }
 
-body[data-theme="dark"] .btn {
-    background-color: #333;
-    border: 1px solid #ededed;
+body[data-mode="dark"] .switch-dot {
+    left: calc(100% - 1rem); /* Moves dot to right */
 }
 
-#theme-switcher.dark:hover {
-    background-color: #191919;
-    color: #dedede;
-    border-color: #ededed;
+body[data-mode="dark"] .icon.sun path {
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-opacity: 0.95;
 }
 
-/* ===== Orange theme ===== */
-body[data-theme="orange"], body[data-theme="orange"] h1 {
-    color: #985511;
-}
-
-body[data-theme="orange"] .btn, body[data-theme="orange"] a {
-    color: #a55c21;
-}
-
-body[data-theme="orange"] .btn {
-    background-color: #ffe5cc;
-    border: 1px solid #ff8c42;
-}
-
-#theme-switcher.orange:hover {
-    background-color: #ffe5cc;
-    color: #e67e22;
-    border-color: #a55c21;
-}
-
-/* ===== Green theme ===== */
-body[data-theme="green"], body[data-theme="green"] h1 {
-    color: #1C4E2A;
-}
-
-body[data-theme="green"] .btn,
-body[data-theme="green"] a {
-    color: #2E7D32;
-}
-
-body[data-theme="green"] .btn {
-    background-color: #EAF6EA;
-    border: 1px solid #43A047;
-}
-
-#theme-switcher.green:hover {
-    background-color: #e7f7ec;
-    color: #2a7a3d;
-    border-color: #27ae60;
+body[data-mode="dark"] .icon.moon path {
+    fill: currentColor;
 }

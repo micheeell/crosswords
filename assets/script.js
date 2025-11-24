@@ -14,13 +14,43 @@ if (!document.body.hasAttribute('data-mode')) {
 
 const toggleMode = document.getElementById('mode-toggle');
 const themeSwitcherButton = document.getElementById('theme-switcher');
-let updateDefaultIcon;
-let icons = {};
+let themes, icons, labels = {};
+let currentThemeIndex = 0;
+const updateDefaultIcon = !themeSwitcherButton
+    ? () => {}
+    : () => {
+        const currentMode = document.body.getAttribute('data-mode') || 'light';
+        icons.default = (currentMode === 'light')
+            ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="30" height="30" fill="currentColor" aria-hidden="true">
+                        <circle cx="64" cy="64" r="20" fill="currentColor"/>
+                        <line x1="64" y1="4" x2="64" y2="20" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="64" y1="108" x2="64" y2="124" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="4" y1="64" x2="20" y2="64" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="108" y1="64" x2="124" y2="64" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="22" y1="22" x2="34" y2="34" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="94" y1="94" x2="106" y2="106" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="22" y1="106" x2="34" y2="94" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                        <line x1="94" y1="34" x2="106" y2="22" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                </svg>`
+            : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="30" height="30" fill="currentColor" aria-hidden="true">
+                        <path d="M64 12.8 C35.72 12.8 12.8 35.72 12.8 64 C12.8 92.28 35.72 115.2 64 115.2 C77.76 115.2 90.26 109.76 99.46 100.92 C100.92 99.52 101.34 97.34 100.52 95.5 C99.7 93.66 97.78 92.52 95.76 92.68 C94.78 92.76 93.8 92.8 92.8 92.8 C72.48 92.8 56 76.32 56 56 C56 41.58 64.3 29.08 76.42 23.04 C78.24 22.14 79.28 20.18 79.04 18.16 C78.8 16.14 77.32 14.5 75.34 14.06 C71.68 13.24 67.88 12.8 64 12.8 z"/>
+                    </svg>`;
+    };
+const updateThemeSwitcherButton = !themeSwitcherButton
+    ? () => {}
+    : (nextThemeIndex) => {
+        const nextTheme = themes[nextThemeIndex];
+        themeSwitcherButton.innerHTML = icons[nextTheme];
+        themeSwitcherButton.setAttribute("aria-label", labels[nextTheme]);
+        themeSwitcherButton.setAttribute("title", labels[nextTheme]);
+        themeSwitcherButton.classList.remove(...themes);
+        themeSwitcherButton.classList.add(nextTheme);
+    };
 
 if (themeSwitcherButton) {
     // Theme list (rotates with the theme switcher button)
-    const themes = ["default", "orange", "green", "red", "blue"];
-    const labels = {
+    themes = ["default", "orange", "green", "red", "blue"];
+    labels = {
         default: "Défaut",
         orange: "Mode orange",
         green: "Mode vert",
@@ -45,36 +75,6 @@ if (themeSwitcherButton) {
         blue: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="30" height="30" fill="currentColor" aria-hidden="true">
                         <path d="M68.82 11.2C68.82 8.54 66.68 6.4 64.02 6.4C61.36 6.4 59.22 8.54 59.22 11.2L59.22 26.82L54.62 22.22C52.74 20.34 49.7 20.34 47.84 22.22C45.98 24.1 45.96 27.14 47.84 29.0L59.24 40.4L59.24 55.7L46.0 48.06L41.82 32.5C41.14 29.94 38.5 28.42 35.94 29.1C33.38 29.78 31.84 32.4 32.54 34.96L34.22 41.26L20.7 33.46C18.4 32.12 15.46 32.9 14.14 35.2C12.82 37.5 13.6 40.44 15.9 41.76L29.42 49.56L23.12 51.24C20.56 51.92 19.04 54.56 19.72 57.12C20.4 59.68 23.04 61.2 25.6 60.52L41.16 56.34L54.4 63.98L41.16 71.62L25.6 67.44C23.04 66.76 20.4 68.28 19.72 70.84C19.04 73.4 20.56 76.04 23.12 76.72L29.42 78.4L15.9 86.2C13.6 87.56 12.82 90.5 14.14 92.8C15.46 95.1 18.4 95.88 20.7 94.56L34.22 86.76L32.54 93.06C31.86 95.62 33.38 98.26 35.94 98.94C38.5 99.62 41.14 98.1 41.82 95.54L46.0 79.98L59.24 72.34L59.24 87.64L47.84 99.04C45.96 100.92 45.96 103.96 47.84 105.82C49.72 107.68 52.76 107.7 54.62 105.82L59.22 101.22L59.22 116.84C59.22 119.5 61.36 121.64 64.02 121.64C66.68 121.64 68.82 119.5 68.82 116.84L68.82 101.22L73.42 105.82C75.3 107.7 78.34 107.7 80.2 105.82C82.06 103.94 82.08 100.9 80.2 99.04L68.8 87.64L68.8 72.34L82.04 79.98L86.22 95.54C86.9 98.1 89.54 99.62 92.1 98.94C94.66 98.26 96.18 95.62 95.5 93.06L93.82 86.76L107.34 94.56C109.64 95.88 112.58 95.1 113.9 92.8C115.22 90.5 114.44 87.56 112.14 86.24L98.62 78.44L104.92 76.76C107.48 76.08 109.0 73.44 108.32 70.88C107.64 68.32 105.0 66.8 102.44 67.48L86.88 71.66L73.64 64.02L86.88 56.38L102.44 60.56C105.0 61.24 107.64 59.72 108.32 57.16C109.0 54.6 107.48 51.96 104.92 51.28L98.62 49.6L112.14 41.8C114.44 40.48 115.22 37.54 113.9 35.24C112.58 32.94 109.64 32.16 107.34 33.48L93.82 41.28L95.5 34.98C96.18 32.42 94.66 29.78 92.1 29.1C89.54 28.42 86.9 29.94 86.22 32.5L82.04 48.06L68.8 55.7L68.8 40.4L80.2 29.0C82.08 27.12 82.08 24.08 80.2 22.22C78.32 20.36 75.28 20.34 73.42 22.22L68.82 26.82L68.82 11.2z" />
                     </svg>`,
-    };
-
-    updateDefaultIcon = () => {
-        const currentMode = document.body.getAttribute('data-mode') || 'light';
-        icons.default = (currentMode === 'light')
-            ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="30" height="30" fill="currentColor" aria-hidden="true">
-                        <circle cx="64" cy="64" r="20" fill="currentColor"/>
-                        <line x1="64" y1="4" x2="64" y2="20" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <line x1="64" y1="108" x2="64" y2="124" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <line x1="4" y1="64" x2="20" y2="64" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <line x1="108" y1="64" x2="124" y2="64" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <line x1="22" y1="22" x2="34" y2="34" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <line x1="94" y1="94" x2="106" y2="106" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <line x1="22" y1="106" x2="34" y2="94" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <line x1="94" y1="34" x2="106" y2="22" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                </svg>`
-            : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="30" height="30" fill="currentColor" aria-hidden="true">
-                        <path d="M64 12.8 C35.72 12.8 12.8 35.72 12.8 64 C12.8 92.28 35.72 115.2 64 115.2 C77.76 115.2 90.26 109.76 99.46 100.92 C100.92 99.52 101.34 97.34 100.52 95.5 C99.7 93.66 97.78 92.52 95.76 92.68 C94.78 92.76 93.8 92.8 92.8 92.8 C72.48 92.8 56 76.32 56 56 C56 41.58 64.3 29.08 76.42 23.04 C78.24 22.14 79.28 20.18 79.04 18.16 C78.8 16.14 77.32 14.5 75.34 14.06 C71.68 13.24 67.88 12.8 64 12.8 z"/>
-                    </svg>`;
-    };
-
-    let currentThemeIndex = 0;
-
-    const updateThemeSwitcherButton = (nextThemeIndex) => {
-        const nextTheme = themes[nextThemeIndex];
-        themeSwitcherButton.innerHTML = icons[nextTheme];
-        themeSwitcherButton.setAttribute("aria-label", labels[nextTheme]);
-        themeSwitcherButton.setAttribute("title", labels[nextTheme]);
-        themeSwitcherButton.classList.remove(...themes);
-        themeSwitcherButton.classList.add(nextTheme);
     };
 
     // Initialize light icon and theme switcher preview on load
