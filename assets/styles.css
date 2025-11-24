@@ -111,12 +111,12 @@ body[data-mode="dark"] .switch-dot {
 }
 
 body[data-mode="dark"] .icon.sun path {
-    fill: currentColor;
-    stroke: currentColor;
+    fill: currentcolor;
+    stroke: currentcolor;
     stroke-width: 2;
     stroke-opacity: 0.95;
 }
 
 body[data-mode="dark"] .icon.moon path {
-    fill: currentColor;
+    fill: currentcolor;
 }

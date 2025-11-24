@@ -14,7 +14,8 @@ They're currently available at [https://micheeell.github.io/crosswords/](https:/
     + Add [external](https://gnu.support/gnu-philosophy/index.html) [links](https://www.opensourcealternative.to/project/linkfree)
     + Style it (with [CSS](https://csszengarden.com/)?)
     + Add links to [validators](#standards)
-- [ ] Refactor css with variables
+- [x] Refactor css with variables
+- [ ] Make dark/light mode + color theme persistent
 - [ ] create a dynamic crossword page
     1. Make typing easy:
         * after typing a character => move to next cell
