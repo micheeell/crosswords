@@ -319,7 +319,8 @@ main {
 
 .column-labels,
 .definitions .vertical .label,
-.definitions .horizontal .vertical.inline-label {
+.definitions .horizontal .vertical.inline-label,
+.definitions .vertical .vertical.inline-label {
     font-family: Cinzel, serif;
     font-size: 18px;
     font-style: italic;
